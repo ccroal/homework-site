@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript loaded');
 
-  const form = document.querySelector('#new-film-form')
+  const selector = function(id){
+    return document.querySelector(id);
+  }
 
-  const deleteButton = document.querySelector('#delete-all-button');
+  const form = selector('#new-film-form')
+
+  const deleteButton = selector('#delete-all-button');
 
   const handleDeleteButton = function(event){
-    const moviesList = document.querySelector('#movies-list');
+    const moviesList = selector('#movies-list');
     moviesList.innerHTML = '';
   }
 
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const director = event.target.director.value;
     const year = event.target.year.value;
 
-    const movies = document.querySelector('#movies-list');
+    const movies = selector('#movies-list');
 
 
     const movieDetails = addElement('div');
