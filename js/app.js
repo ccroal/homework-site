@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   deleteButton.addEventListener('click', handleDeleteButton);
 
+  const addElement = function(type){
+    return document.createElement(type);
+  }
+
   const handleFormSubmit = function(event){
     event.preventDefault();
 
@@ -22,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const movies = document.querySelector('#movies-list');
 
 
-    const movieDetails = document.createElement('div');
-    const titlePara = document.createElement('p');
-    const directorPara = document.createElement('p');
-    const yearPara = document.createElement('p');
+    const movieDetails = addElement('div');
+    const titlePara = addElement('p');
+    const directorPara = addElement('p');
+    const yearPara = addElement('p');
 
     titlePara.textContent = title;
     directorPara.textContent = director;
